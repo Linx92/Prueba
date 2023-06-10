@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
-using System.IO;
 using System.Threading.Tasks;
-using TestApi.DTOs;
+using TestApi.Servicios;
 
 namespace TestApi.Controllers
 {
@@ -11,52 +10,40 @@ namespace TestApi.Controllers
     [Route("v1/meta")]
     public class MetaController : ControllerBase
     {
-        private readonly IConfiguration configuration;
-        private readonly string ruta;
-        public MetaController(IConfiguration configuration)
+        private readonly ILoggService loggService;
+
+        public MetaController(ILoggService loggService)
         {
-            this.configuration = configuration;
-            ruta = configuration["LOG_FILE_PATH"];
+            this.loggService = loggService;
         }
         [HttpGet("log")]
         public async Task<ActionResult<string>> Get() 
         {
-            string mensajeLog = null;
+            string mensajeLog;
             try
             {
-                
-                using (var sr = new StreamReader(ruta))
-                {
-                    mensajeLog = await sr.ReadToEndAsync();
-                } 
-                
+               mensajeLog = await loggService.ReadLog();                                   
             }
-            catch
+            catch(Exception e)
             {
-                throw;
-             
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);           
             }
-            return mensajeLog;
+            return Ok(mensajeLog);
         }
         [HttpGet("log/truncate")]
-        public ActionResult<LogDTO> Truncate()
+        public ActionResult Truncate()
         {
             try
             {
-                var fs = new FileStream(ruta, FileMode.Truncate);
-                fs.Close();
-                LogDTO log = new LogDTO
-                {
-                    Code = Ok().StatusCode,
-                    Message = "log truncado"
-                };
-                return log;
+                loggService.Truncate();
             }
-            catch 
+            catch(Exception e)
             {
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
-            
+
+            return Ok(new { code = StatusCodes.Status200OK, message = "log truncado" });
         }
     }
 }
+
