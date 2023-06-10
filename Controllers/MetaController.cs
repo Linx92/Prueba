@@ -35,7 +35,7 @@ namespace TestApi.Controllers
         {
             try
             {
-                loggService.Truncate();
+                loggService.TruncateLog();
             }
             catch(Exception e)
             {

@@ -7,7 +7,7 @@ namespace TestApi.Servicios
     public interface ILoggService 
     {
         Task<string> ReadLog();
-        void Truncate();
+        void TruncateLog();
     }
     public class LoggService : ILoggService
     {
@@ -21,15 +21,17 @@ namespace TestApi.Servicios
 
         public async Task<string> ReadLog()
         {
-            string mensajeLogg = null;
+            string mensajeLogg;
+
             using (var sr = new StreamReader(ruta))
             {
                 mensajeLogg = await sr.ReadToEndAsync();
             }
-            return mensajeLogg;
+
+            return mensajeLogg.Length > 0 ? mensajeLogg : "No logs";
         }
 
-        public void Truncate()
+        public void TruncateLog()
         {
             var fs = new FileStream(ruta, FileMode.Truncate);
             fs.Close();
