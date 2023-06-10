@@ -11,12 +11,10 @@ namespace TestApi.Servicios
     }
     public class LoggService : ILoggService
     {
-        private readonly IConfiguration configuration;
         private readonly string ruta;
         public LoggService(IConfiguration configuration)
         {
-            this.configuration = configuration;
-            ruta = configuration["LOG_FILE_PATH"];
+           ruta = configuration["LOG_FILE_PATH"];
         }
 
         public async Task<string> ReadLog()
