@@ -11,6 +11,7 @@ namespace TestApi.Controllers
     public class MetaController : ControllerBase
     {
         private readonly ILoggService loggService;
+        private string mensajeLog;
 
         public MetaController(ILoggService loggService)
         {
@@ -19,7 +20,6 @@ namespace TestApi.Controllers
         [HttpGet("log")]
         public async Task<ActionResult<string>> Get() 
         {
-            string mensajeLog;
             try
             {
                mensajeLog = await loggService.ReadLog();                                   
@@ -35,14 +35,14 @@ namespace TestApi.Controllers
         {
             try
             {
-                loggService.TruncateLog();
+                mensajeLog = loggService.TruncateLog();
             }
             catch(Exception e)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, e.Message);
             }
 
-            return Ok(new { code = StatusCodes.Status200OK, message = "log truncado" });
+            return Ok(new { code = StatusCodes.Status200OK, message = mensajeLog });
         }
     }
 }

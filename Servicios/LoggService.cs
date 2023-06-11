@@ -24,10 +24,12 @@ namespace TestApi.Servicios
             return mensajeLogg.Length > 0 ? mensajeLogg : "No logs";
         }
 
-        public void TruncateLog()
+        public string TruncateLog()
         {
             var fs = new FileStream(ruta, FileMode.Truncate);
             fs.Close();
+
+            return "log truncado";
         }
     }
 }
