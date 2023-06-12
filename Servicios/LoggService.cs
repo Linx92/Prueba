@@ -15,17 +15,18 @@ namespace TestApi.Servicios
         public async Task<string> ReadLog()
         {
             string mensajeLogg;
-
+            //Abre el archivo y lee el contenido
             using (var sr = new StreamReader(ruta))
             {
                 mensajeLogg = await sr.ReadToEndAsync();
             }
-
+            //Devuelve "No logs" si el archivo no tiene contenido que mostrar
             return mensajeLogg.Length > 0 ? mensajeLogg : "No logs";
         }
 
         public async Task<string> TruncateLog()
         {
+            //Borra el contenido del archivo
             await File.WriteAllTextAsync(ruta, string.Empty);
 
             return "log truncado";
