@@ -31,11 +31,11 @@ namespace TestApi.Controllers
             return Ok(mensajeLog);
         }
         [HttpGet("log/truncate")]
-        public ActionResult Truncate()
+        public async Task<ActionResult> Truncate()
         {
             try
             {
-                mensajeLog = loggService.TruncateLog();
+                mensajeLog = await loggService.TruncateLog();
             }
             catch(Exception e)
             {

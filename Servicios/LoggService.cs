@@ -24,10 +24,9 @@ namespace TestApi.Servicios
             return mensajeLogg.Length > 0 ? mensajeLogg : "No logs";
         }
 
-        public string TruncateLog()
+        public async Task<string> TruncateLog()
         {
-            var fs = new FileStream(ruta, FileMode.Truncate);
-            fs.Close();
+            await File.WriteAllTextAsync(ruta, string.Empty);
 
             return "log truncado";
         }
