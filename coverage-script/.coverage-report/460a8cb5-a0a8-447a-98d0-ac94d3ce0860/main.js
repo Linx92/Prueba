@@ -222,10 +222,7 @@ var assemblies = [
     "name": "TestApi",
     "classes": [
       { "name": "TestApi.Controllers.MetaController", "rp": "TestApi_MetaController.html", "cl": 22, "ucl": 0, "cal": 22, "tl": 49, "cb": 2, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "TestApi.Program", "rp": "TestApi_Program.html", "cl": 0, "ucl": 8, "cal": 8, "tl": 26, "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "TestApi.Properties.Resources", "rp": "TestApi_Resources.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 63, "cb": 0, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "TestApi.Servicios.LoggService", "rp": "TestApi_LoggService.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 35, "cb": 4, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "TestApi.Startup", "rp": "TestApi_Startup.html", "cl": 0, "ucl": 34, "cal": 34, "tl": 60, "cb": 0, "tb": 8, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

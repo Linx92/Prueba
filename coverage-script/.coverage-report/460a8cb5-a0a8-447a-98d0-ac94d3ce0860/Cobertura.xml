@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="1" branch-rate="0.75" lines-covered="37" lines-valid="37" branches-covered="6" branches-valid="8" complexity="NaN" version="0" timestamp="1686573279">
+  <sources>
+    <source>C:\Users\Linx\source\repos\challenge_microservice_template\</source>
+  </sources>
+  <packages>
+    <package name="TestApi" line-rate="1" branch-rate="0.75" complexity="NaN">
+      <classes>
+        <class name="TestApi.Controllers.MetaController" filename="C:\Users\Linx\source\repos\challenge_microservice_template\Controllers\MetaController.cs" line-rate="1" branch-rate="0.5" complexity="NaN">
+          <methods>
+            <method name=".ctor" signature="(TestApi.Servicios.ILoggService)" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="16" hits="4" branch="false" />
+                <line number="17" hits="4" branch="false" />
+                <line number="18" hits="4" branch="false" />
+                <line number="19" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="Get" signature="()" line-rate="1" branch-rate="0.5" complexity="NaN">
+              <lines>
+                <line number="22" hits="2" branch="true" condition-coverage="50% (1/2)" />
+                <line number="24" hits="2" branch="false" />
+                <line number="25" hits="2" branch="false" />
+                <line number="26" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="32" hits="2" branch="false" />
+              </lines>
+            </method>
+            <method name="Truncate" signature="()" line-rate="1" branch-rate="0.5" complexity="NaN">
+              <lines>
+                <line number="35" hits="2" branch="true" condition-coverage="50% (1/2)" />
+                <line number="37" hits="2" branch="false" />
+                <line number="38" hits="2" branch="false" />
+                <line number="39" hits="1" branch="false" />
+                <line number="40" hits="1" branch="false" />
+                <line number="41" hits="1" branch="false" />
+                <line number="42" hits="1" branch="false" />
+                <line number="45" hits="1" branch="false" />
+                <line number="46" hits="2" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="4" branch="false" />
+            <line number="17" hits="4" branch="false" />
+            <line number="18" hits="4" branch="false" />
+            <line number="19" hits="4" branch="false" />
+            <line number="22" hits="2" branch="true" condition-coverage="50% (1/2)" />
+            <line number="24" hits="2" branch="false" />
+            <line number="25" hits="2" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="32" hits="2" branch="false" />
+            <line number="35" hits="2" branch="true" condition-coverage="50% (1/2)" />
+            <line number="37" hits="2" branch="false" />
+            <line number="38" hits="2" branch="false" />
+            <line number="39" hits="1" branch="false" />
+            <line number="40" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="42" hits="1" branch="false" />
+            <line number="45" hits="1" branch="false" />
+            <line number="46" hits="2" branch="false" />
+          </lines>
+        </class>
+        <class name="TestApi.Servicios.LoggService" filename="C:\Users\Linx\source\repos\challenge_microservice_template\Servicios\LoggService.cs" line-rate="1" branch-rate="1" complexity="NaN">
+          <methods>
+            <method name=".ctor" signature="(Microsoft.Extensions.Configuration.IConfiguration)" line-rate="1" branch-rate="1">
+              <lines>
+                <line number="10" hits="3" branch="false" />
+                <line number="11" hits="3" branch="false" />
+                <line number="12" hits="3" branch="false" />
+                <line number="13" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="ReadLog" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="16" hits="2" branch="false" />
+                <line number="19" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="20" hits="2" branch="false" />
+                <line number="21" hits="2" branch="false" />
+                <line number="22" hits="2" branch="false" />
+                <line number="24" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="25" hits="2" branch="false" />
+              </lines>
+            </method>
+            <method name="TruncateLog" signature="()" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="28" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+                <line number="33" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="3" branch="false" />
+            <line number="11" hits="3" branch="false" />
+            <line number="12" hits="3" branch="false" />
+            <line number="13" hits="3" branch="false" />
+            <line number="16" hits="2" branch="false" />
+            <line number="19" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="20" hits="2" branch="false" />
+            <line number="21" hits="2" branch="false" />
+            <line number="22" hits="2" branch="false" />
+            <line number="24" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="25" hits="2" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+            <line number="33" hits="1" branch="false" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
